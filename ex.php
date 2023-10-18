@@ -15,7 +15,7 @@
             <div class="col-md-12">
                 <div class="card mt-4">
                     <div class="card-header">
-                        <h4 style="color:red;">AMRITA SAI INSTITUTE OF SCIENCE AND TECHNOLOGY ATTENDENCE RECORD </h4>
+                        <h4 style="color:red;">HEADING </h4>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -47,14 +47,14 @@
                             </thead>
                             <tbody>
                                 <?php 
-                                    $con = mysqli_connect("localhost","root","","attendence");
+                                    $con = mysqli_connect("localhost","root","","<<databasename>>");
 
                                     if(isset($_GET['search']))
                                     {
                                         $filtervalues = $_GET['search'];
-                                        $pattern='/^20[A-Z]{2}\d{1}A\d{4}$/';
+                                        $pattern='/<<regular expression>>/';
                                         if(preg_match($pattern,$filtervalues)){
-                                            $query  = "SELECT * FROM student_attendence WHERE CONCAT(StudentName,RollNO,attendence) LIKE '%$filtervalues%' ";
+                                            $query  = "SELECT * FROM <<table name>> WHERE CONCAT(StudentName,RollNO,attendence) LIKE '%$filtervalues%' ";
                                             $query_run = mysqli_query($con, $query);
                                          
     
