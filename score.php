@@ -15,7 +15,7 @@
             <div class="col-md-12">
                 <div class="card mt-4">
                     <div class="card-header">
-                        <h4 style="color:red;">AMRITA SAI INSTITUTE OF SCIENCE AND TECHNOLOGY  SEMESTER WISE SCORE </h4>
+                        <h4 style="color:red;">HEADING </h4>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -56,14 +56,14 @@
                             </thead>
                             <tbody>
                                 <?php 
-                                    $con = mysqli_connect("localhost","root","","attendence");
+                                    $con = mysqli_connect("localhost","root","","<<dbname>>");
 
                                     if(isset($_GET['search']))
                                     {
                                         $filtervalues = $_GET['search'];
-                                        $pattern='/^20[A-Z]{2}\d{1}A\d{4}$/i';
+                                        $pattern='/Regular Expression/';
                                         if(preg_match($pattern,$filtervalues)){
-                                            $query  = "SELECT * FROM student_marks WHERE CONCAT(RollNO,sem1,sem2,sem3,sem4,sem5,sem6,sem7,sem8,cgpa) LIKE '%$filtervalues%' ";
+                                            $query  = "SELECT * FROM <<tablename>> WHERE CONCAT(RollNO,sem1,sem2,sem3,sem4,sem5,sem6,sem7,sem8,cgpa) LIKE '%$filtervalues%' ";
                                             $query_run = mysqli_query($con, $query);
                                          
     
